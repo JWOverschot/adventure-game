@@ -52,6 +52,7 @@ var doorMat = document.getElementById("door-mat");
 var door = document.getElementsByClassName("doors")[0];
 var key = document.getElementById("door3key");
 var screenOfDeath = document.getElementById("screen-of-death");
+var computerScreen = document.getElementById("screen");
 var door3Key = false;
 //title screen
 function start() {
@@ -121,6 +122,15 @@ function lvlA() {
   text.innerHTML = lAt1;
   nextBtn.style.visibility = "initial";
   action = 1;
+}
+
+function lvl3() {
+  console.log("level 3");
+  doorThree.remove();
+  desk.style.display = "block";
+  vent.style.display = "block";
+  computerScreen.style.display = "block";
+  door.style.top = "40%";
 }
 
 function door3() {

@@ -170,6 +170,26 @@ main h2 {
 	width: 27.9%;
 }
 
+#vent {
+	display: none;
+	width: 30%;
+}
+
+#desk {
+	display: none;
+	width: 100%;
+	margin-top: 15%;
+}
+#screen {
+	display: none;
+	background-color: olive;
+	position: fixed;
+	height: 14%;
+	width: 35.3%;
+	top: 51.4%;
+	z-index: -1;
+}
+
 .dialog {
 	width: 100%
 	height: 60px;

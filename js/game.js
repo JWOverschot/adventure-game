@@ -133,6 +133,15 @@ function lvl3() {
   door.style.top = "40%";
 }
 
+function textCheck() {
+  var textarea = document.getElementById("screen-input");
+  var textValue = textarea.value;
+  
+  if (textValue=="hack") {
+    console.log("You are a hackerman!");
+  }
+}
+
 function door3() {
   if (door3Key == true) {
     lvl3();

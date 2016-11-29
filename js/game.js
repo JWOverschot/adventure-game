@@ -38,6 +38,12 @@ var l1t3 = "There are two doors the left one is the wrong one and the right one 
 //text lvl2
 var l2t1 = "Try opening the door.";
 var l2t2 = "You have a key!";
+//text lvl3
+var l3t1 = "Do you think you can hack?";
+var l3t2 = "Try to unlock a secret door.";
+var l3t3 = "Do you need help?";
+var l3t4 = "Try typing hack.";
+var l3t5 = "You need to 'open secret door'.";
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
@@ -131,18 +137,23 @@ function lvl3() {
   vent.style.display = "block";
   computerScreen.style.display = "block";
   door.style.top = "40%";
+  text.innerHTML = l3t1;
+  nextBtn.style.visibility = "initial";
+  action = 1;
 }
 
 function textCheck() {
   var textarea = document.getElementById("screen-input");
   var textValue = textarea.value.toLowerCase();
   if (textValue=="hack") {
-    console.log("hack started");
-    textarea.value = "hack started.\n";
+    console.log("hack started...");
+    textarea.value = "hack started...\n";
   }
-  else if (textValue=="hack started.\nopen secret door") {
+  else if (textValue=="hack started...\nopen secret door") {
         console.log("door unlocked");
         textarea.value = "Door Unlocked!";
+        text.innerHTML = "You have unlocked the secret door!"
+        nextBtn.style.visibility = "hidden";
     }
 }
 
@@ -183,6 +194,9 @@ function Next() {
     else if (text.innerHTML == lAt1) {
       text.innerHTML = lAt2;
     }
+    else if (text.innerHTML == l3t1) {
+      text.innerHTML = l3t2;
+    }
     action = 2;
   }
 
@@ -195,6 +209,9 @@ function Next() {
     else if (text.innerHTML == lAt2) {
       text.innerHTML = lAt3;
     }
+    else if (text.innerHTML == l3t2) {
+      text.innerHTML = l3t3;
+    }
     action = 3;
   }
 
@@ -204,5 +221,17 @@ function Next() {
       nextBtn.style.visibility = "hidden";
       setTimeout(dead, 300000);
     }
+    else if (text.innerHTML == l3t3) {
+      text.innerHTML = l3t4;
+    }
+    action = 4;
   }
+
+  else if (action == 4) {
+    if (text.innerHTML == l3t4) {
+      text.innerHTML = l3t5;
+      nextBtn.style.visibility = "hidden";
+    }
+  }
+  
 }

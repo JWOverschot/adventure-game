@@ -135,11 +135,15 @@ function lvl3() {
 
 function textCheck() {
   var textarea = document.getElementById("screen-input");
-  var textValue = textarea.value;
-  
+  var textValue = textarea.value.toLowerCase();
   if (textValue=="hack") {
-    console.log("You are a hackerman!");
+    console.log("hack started");
+    textarea.value = "hack started.\n";
   }
+  else if (textValue=="hack started.\nopen secret door") {
+        console.log("door unlocked");
+        textarea.value = "Door Unlocked!";
+    }
 }
 
 function door3() {

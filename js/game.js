@@ -160,6 +160,7 @@ function textCheck() {
 function door3() {
   if (door3Key == true) {
     lvl3();
+    doorSound();
   }
   else {
     text.innerHTML = "The door is locked!";

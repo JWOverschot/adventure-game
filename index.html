@@ -41,7 +41,7 @@
 			<img id="desk" src="media/desk.png" alt="desk">
 			<div id="screen"><textarea onkeyup="textCheck()" id="screen-input" type="text" maxlength="100" spellcheck=false></textarea></div>
 			<button onclick="dead()" class="arrows" type="button"><i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i></button>
-			<button class="arrows" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
+			<button onclick="win()" class="arrows" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
 		</div>
 		<audio id="audioDoor1">
 			<source src="media/open-door1.mp3" type="audio/mpeg">
@@ -63,6 +63,12 @@
 			<p id="text"></p>
 			<button onclick="Next()" id="next" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
 		</div>
+	</div>
+	<div id="win-screen">
+		<div id="confetti"></div>
+		<h1>YOU WIN!</h1>
+		<h2>You have escaped and are now free!</h2>
+		<h3>Press any key to restart.</h3>
 	</div>
 	<div id="screen-of-death">
 		<span class="error-title">GAME OVER</span>

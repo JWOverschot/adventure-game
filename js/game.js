@@ -60,6 +60,7 @@ var doorMat = document.getElementById("door-mat");
 var door = document.getElementsByClassName("doors")[0];
 var key = document.getElementById("door3key");
 var screenOfDeath = document.getElementById("screen-of-death");
+var winScreen = document.getElementById("win-screen");
 var computerScreen = document.getElementById("screen");
 var arrows = document.getElementsByClassName("arrows");
 var door3Key = false;
@@ -106,7 +107,17 @@ function dead() {
   }
 }
 
-
+function win() {
+  if (text.innerHTML == lBt1) {
+    document.getElementById("lvl1").style.display = "none";
+    winScreen.style.display = "block";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
+    console.log("You win!");
+    document.onkeypress = function reloadPage() {
+    location.reload();
+    }
+  }
+}
 
 function lvl2() {
   console.log("level 2");

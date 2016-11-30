@@ -113,6 +113,7 @@ function win() {
     winScreen.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
     console.log("You win!");
+    document.getElementById("audioWin").play();
     document.onkeypress = function reloadPage() {
     location.reload();
     }
@@ -165,6 +166,7 @@ function lvlB() {
   desk.remove();
   vent.remove();
   computerScreen.remove();
+  nextBtn.style.visibility = "hidden";
   text.innerHTML = lBt1;
   arrows[0].style.display = "inline";
   arrows[1].style.display = "inline";

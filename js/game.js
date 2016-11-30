@@ -174,6 +174,16 @@ function lvlB() {
   door.style.top = "50%";
 }
 
+function lvl4() {
+  console.log("level 4");
+  desk.remove();
+  vent.remove();
+  computerScreen.remove();
+  text.innerHTML = l4t1;
+  nextBtn.style.visibility = "initial";
+  action = 1;
+}
+
 function textCheck() {
   var textarea = document.getElementById("screen-input");
   var textValue = textarea.value.toLowerCase();
@@ -186,6 +196,7 @@ function textCheck() {
         textarea.value = "Door Unlocked!";
         text.innerHTML = "You have unlocked the secret door!"
         nextBtn.style.visibility = "hidden";
+        setTimeout(function(){lvl4()}, 1000);
     }
 }
 
@@ -216,6 +227,11 @@ function keyCollect() {
   key.style.filter = "opacity(0)";
   key.style.transitionDuration = "1s";
   text.innerHTML = l2t2;
+}
+
+function ventOpen() {
+  document.getElementById("audioVent").play();
+  setTimeout(function(){lvlB()}, 4000);
 }
 
 action = 1;

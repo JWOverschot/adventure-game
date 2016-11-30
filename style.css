@@ -226,7 +226,7 @@ main h2 {
 	display: inline;
 }
 /*button*/
-#next {
+#next, .arrows {
 	float: right;
 	border: none;
 	background: transparent;
@@ -234,9 +234,16 @@ main h2 {
 	top: 1px;
 }
 
-#next:hover {
+#next:hover, .arrows:hover {
 	box-shadow: none;
 	color: #2c75ff;
+}
+
+.arrows {
+	display: none;
+	margin: 20px;
+	color: white;
+	margin-right: 84%;
 }
 
 #screen-of-death {

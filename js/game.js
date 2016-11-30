@@ -59,6 +59,7 @@ var door = document.getElementsByClassName("doors")[0];
 var key = document.getElementById("door3key");
 var screenOfDeath = document.getElementById("screen-of-death");
 var computerScreen = document.getElementById("screen");
+var arrows = document.getElementsByClassName("arrows");
 var door3Key = false;
 //title screen
 function start() {
@@ -140,6 +141,21 @@ function lvl3() {
   text.innerHTML = l3t1;
   nextBtn.style.visibility = "initial";
   action = 1;
+}
+
+function lvlB() {
+  console.log("level B");
+  document.getElementById("audioVent").play(); //audio for vent
+  bg.style.backgroundImage = "url(media/air-vent.png)";
+  bg.style.backgroundRepeat = "no-repeat";
+  bg.style.backgroundSize = "cover";
+  desk.remove();
+  vent.remove();
+  computerScreen.remove();
+  arrows[0].style.display = "inline";
+  arrows[1].style.display = "inline";
+  door.style.flexDirection = "row";
+  door.style.top = "50%";
 }
 
 function textCheck() {

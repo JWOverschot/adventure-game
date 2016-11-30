@@ -49,6 +49,8 @@ var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
 var lAt3 = "What are you going to do?";
 var lAt4 = "Stay here and starve to death, or jump down and have a small chance of surviving.";
+//text lvlB
+var lBt1 = "No hacking for you? So left or right?"
 
 var bg = document.getElementById("background");
 var doorOne = document.getElementById("door-1");
@@ -92,7 +94,7 @@ function doorSound() {
 }
 
 function dead() {
-  if (text.innerHTML == lAt4) {
+  if (text.innerHTML == lAt4 || text.innerHTML == lBt1) {
     document.getElementById("lvl1").style.display = "none";
     screenOfDeath.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
@@ -152,6 +154,7 @@ function lvlB() {
   desk.remove();
   vent.remove();
   computerScreen.remove();
+  text.innerHTML = lBt1;
   arrows[0].style.display = "inline";
   arrows[1].style.display = "inline";
   door.style.flexDirection = "row";

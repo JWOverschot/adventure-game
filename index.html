@@ -40,7 +40,7 @@
 			<img onclick="lvlB()" id="vent" src="media/vent.png" alt="vent">
 			<img id="desk" src="media/desk.png" alt="desk">
 			<div id="screen"><textarea onkeyup="textCheck()" id="screen-input" type="text" maxlength="100" spellcheck=false></textarea></div>
-			<button class="arrows" type="button"><i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i></button>
+			<button onclick="dead()" class="arrows" type="button"><i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i></button>
 			<button class="arrows" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
 		</div>
 		<audio id="audioDoor1">
@@ -64,7 +64,7 @@
 			<button onclick="Next()" id="next" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>
 		</div>
 	</div>
-	<div id="screen-of-death" >
+	<div id="screen-of-death">
 		<span class="error-title">GAME OVER</span>
 		<p>
 		You are dead!<br>

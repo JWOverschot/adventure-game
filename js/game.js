@@ -63,6 +63,7 @@ var screenOfDeath = document.getElementById("screen-of-death");
 var winScreen = document.getElementById("win-screen");
 var computerScreen = document.getElementById("screen");
 var arrows = document.getElementsByClassName("arrows");
+var safeGearFront = document.getElementById("safe-gear-front");
 var door3Key = false;
 //title screen
 function start() {
@@ -232,6 +233,25 @@ function keyCollect() {
 function ventOpen() {
   document.getElementById("audioVent").play();
   setTimeout(function(){lvlB()}, 4000);
+}
+var degr = 0;
+function rotateSafe() {
+  for (var i = 0; i <= 200; i++) {
+    if (degr < 100) {
+      degr += 1;
+    }
+  }
+  
+  if (degr == 360) {
+    degr = 0;
+  }
+  if (degr < 200 && degr > 100) {
+    setTimeout(function(){degr -= 1}, 1000);
+  }
+  else {
+    clearTimeout(function(){degr -= 1});
+  }
+  safeGearFront.style.transform = "rotate(" + degr + "deg)";
 }
 
 action = 1;

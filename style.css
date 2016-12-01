@@ -208,6 +208,23 @@ main h2 {
 	background-color: black;
 }
 
+#safe, #safe-gear-back, #safe-gear-front {
+	position: fixed;
+}
+#safe-gear-back, #safe-gear-front {
+	top: 43px;
+    width: 240px;
+}
+#safe {
+	
+}
+#safe-gear-back {
+
+}
+#safe-gear-front {
+	
+}
+
 .dialog {
 	width: 100%
 	height: 60px;

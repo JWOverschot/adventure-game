@@ -237,6 +237,7 @@ function ventOpen() {
 var degr = 0;
 var degrPlusMinus = true;
 var vartimeOut;
+var timeMS = 1500;
 function rotateSafe() {
   
   if (degrPlusMinus == true) {
@@ -249,14 +250,26 @@ function rotateSafe() {
   if (degr == 360 || degr == -360) {
     degr = 0;
   }
-  if (degr == 100) {
-    vartimeOut = setTimeout(function(){degrPlusMinus = false;}, 2000);
-  }
-  else {
+  //26
+
+  if (degr <= 97 && degr >= 102) {
+    console.log("else 26");
     clearTimeout(vartimeOut);
   }
+  else if (degr >= 97 && degr <= 102) {
+    console.log("if 26");
+    vartimeOut = setTimeout(function(){degrPlusMinus = false; console.log("false");}, timeMS);
+  }
+
+  if (degr >= -164 && degr <= -170) {
+    console.log("else 50");
+    clearTimeout(vartimeOut);
+  }
+  else if (degr <= -164 && degr >= -170) {
+    console.log("if 50");
+    vartimeOut = setTimeout(function(){degrPlusMinus = true; console.log("true");}, timeMS);
+  }
   safeGearFront.style.transform = "rotate(" + degr + "deg)";
-  console.log(vartimeOut);
 }
 
 action = 1;

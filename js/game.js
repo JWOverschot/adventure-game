@@ -235,23 +235,28 @@ function ventOpen() {
   setTimeout(function(){lvlB()}, 4000);
 }
 var degr = 0;
+var degrPlusMinus = true;
+var vartimeOut;
 function rotateSafe() {
-  for (var i = 0; i <= 200; i++) {
-    if (degr < 100) {
-      degr += 1;
-    }
-  }
   
-  if (degr == 360) {
-    degr = 0;
-  }
-  if (degr < 200 && degr > 100) {
-    setTimeout(function(){degr -= 1}, 1000);
+  if (degrPlusMinus == true) {
+    degr += 1;
   }
   else {
-    clearTimeout(function(){degr -= 1});
+    degr -= 1;
+  }
+
+  if (degr == 360 || degr == -360) {
+    degr = 0;
+  }
+  if (degr == 100) {
+    vartimeOut = setTimeout(function(){degrPlusMinus = false;}, 2000);
+  }
+  else {
+    clearTimeout(vartimeOut);
   }
   safeGearFront.style.transform = "rotate(" + degr + "deg)";
+  console.log(vartimeOut);
 }
 
 action = 1;

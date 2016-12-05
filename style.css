@@ -208,15 +208,14 @@ main h2 {
 	background-color: black;
 }
 
-#safe, #safe-gear-back, #safe-gear-front {
+#safe-back, #safe-gear-back, #safe-gear-front {
 	position: fixed;
 }
 #safe-gear-back, #safe-gear-front {
-	top: 43px;
     width: 240px;
 }
-#safe {
-	
+.safe {
+	display: none;
 }
 #safe-gear-back {
 

@@ -44,6 +44,10 @@ var l3t2 = "Try to unlock a secret door.";
 var l3t3 = "Do you need help?";
 var l3t4 = "Try typing hack.";
 var l3t5 = "You need to 'open secret door'.";
+//text lvl1
+var l4t1 = "A safe?";
+var l4t2 = "Do you want to know what is inside?";
+var l4t3 = "fortunatly someone left a postit with a code on it. It says os-9z"
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
@@ -300,6 +304,9 @@ function Next() {
     else if (text.innerHTML == l3t1) {
       text.innerHTML = l3t2;
     }
+    else if (text.innerHTML == l4t1) {
+      text.innerHTML = l4t2;
+    }
     action = 2;
   }
 
@@ -314,6 +321,10 @@ function Next() {
     }
     else if (text.innerHTML == l3t2) {
       text.innerHTML = l3t3;
+    }
+    else if (text.innerHTML == l4t2) {
+      text.innerHTML = l4t3;
+      nextBtn.style.visibility = "hidden";
     }
     action = 3;
   }

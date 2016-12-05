@@ -69,6 +69,7 @@ var computerScreen = document.getElementById("screen");
 var arrows = document.getElementsByClassName("arrows");
 var safe = document.getElementsByClassName("safe");
 var safeGearFront = document.getElementById("safe-gear-front");
+var dynamite = document.getElementById("dynamite");
 var door3Key = false;
 //title screen
 function start() {
@@ -270,7 +271,7 @@ function rotateSafe() {
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = false;}, 1500);
+      timeOut = setTimeout(function(){degrPlusMinus = false; console.log("unlock 1st digit");}, 500);
     }
   }
   else if (degrPlusMinus == true) {
@@ -283,7 +284,14 @@ function rotateSafe() {
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = true; console.log("safe unlocked");}, 1500);
+      timeOut = setTimeout(function(){
+        degrPlusMinus = true;
+        console.log("safe unlocked");
+        safe[0].src = "media/safe-inside.png";
+        for (var i = 1; i <= 1; i + 2) {
+          safe[i].remove();
+        }
+      }, 500);
     }
   }
   else if (degrPlusMinus == false) {

@@ -253,32 +253,28 @@ function rotateSafe() {
   //26
 
   if (degr >= 97 && degr <= 102) {
-    console.log("if 26");
     if (timeOut != null) {
       clearTimeout(timeOut); 
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = false; console.log("false");}, 1500);
+      timeOut = setTimeout(function(){degrPlusMinus = false;}, 1500);
     }
   }
   else if (degrPlusMinus == true) {
-    console.log("else 26");
     clearTimeout(timeOut);
   }
   //50
   if (degr <= -164 && degr >= -170) {
-    console.log("if 50");
     if (timeOut != null) {
       clearTimeout(timeOut); 
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = true; console.log("true");}, 1500);
+      timeOut = setTimeout(function(){degrPlusMinus = true; console.log("safe unlocked");}, 1500);
     }
   }
   else if (degrPlusMinus == false) {
-    console.log("else 50");
     clearTimeout(timeOut);
   }
   safeGearFront.style.transform = "rotate(" + degr + "deg)";

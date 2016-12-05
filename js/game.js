@@ -63,6 +63,7 @@ var screenOfDeath = document.getElementById("screen-of-death");
 var winScreen = document.getElementById("win-screen");
 var computerScreen = document.getElementById("screen");
 var arrows = document.getElementsByClassName("arrows");
+var safe = document.getElementsByClassName("safe");
 var safeGearFront = document.getElementById("safe-gear-front");
 var door3Key = false;
 //title screen
@@ -169,6 +170,9 @@ function lvlB() {
   computerScreen.remove();
   nextBtn.style.visibility = "hidden";
   text.innerHTML = lBt1;
+  for (var i = 0; i <= 1; i++) {
+    arrows[i].style.display = "inline";
+  }
   arrows[0].style.display = "inline";
   arrows[1].style.display = "inline";
   door.style.flexDirection = "row";
@@ -180,6 +184,10 @@ function lvl4() {
   desk.remove();
   vent.remove();
   computerScreen.remove();
+  for (var i = 0; i <= 2; i++) {
+    safe[i].style.display = "block";
+  }
+  safe[0].style.display = "block";
   text.innerHTML = l4t1;
   nextBtn.style.visibility = "initial";
   action = 1;

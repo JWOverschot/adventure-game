@@ -44,10 +44,12 @@ var l3t2 = "Try to unlock a secret door.";
 var l3t3 = "Do you need help?";
 var l3t4 = "Try typing hack.";
 var l3t5 = "You need to 'open secret door'.";
-//text lvl1
+//text lvl4
 var l4t1 = "A safe?";
 var l4t2 = "Do you want to know what is inside?";
 var l4t3 = "fortunatly someone left a postit with a code on it. It says os-9z"
+//text lvl5
+var l5t1 = "use <i class="fa fa-caret-square-o-left" aria-hidden="true"></i><i class="fa fa-caret-square-o-right" aria-hidden="true"></i>"
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
@@ -193,6 +195,16 @@ function lvl4() {
   }
   safe[0].style.display = "block";
   text.innerHTML = l4t1;
+  nextBtn.style.visibility = "initial";
+  action = 1;
+}
+
+function lvl5() {
+  console.log("level 5");
+  bg.style.backgroundImage = "url(media/tunnel.jpg)";
+  bg.style.backgroundRepeat = "no-repeat";
+  bg.style.backgroundSize = "cover";
+  text.innerHTML = l5t1;
   nextBtn.style.visibility = "initial";
   action = 1;
 }

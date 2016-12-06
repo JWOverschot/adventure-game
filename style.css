@@ -118,7 +118,7 @@ main h2 {
 	margin-bottom: 10px;
 }
 /*level 1*/
-#lvl1 {
+#lvls {
 	height: 100%;
 	width: 100%;
 	display: none;
@@ -185,9 +185,9 @@ main h2 {
 	background-image: url(media/hackerman.png);
 	background-size: 100%;
 	position: fixed;
-	height: 13.2%;
+	height: 16.3%;
 	width: 34.4%;
-	top: 51.7%;
+	top: 40.6%;
 	left: 32.5%;
 }
 
@@ -216,6 +216,12 @@ main h2 {
 }
 .safe, #dynamite {
 	display: none;
+}
+
+#explosion {
+	display: none;
+	position: fixed;
+	width: 800px;
 }
 
 .dialog {
@@ -251,7 +257,7 @@ main h2 {
 
 .arrows {
 	display: none;
-	margin: 20px;
+	margin: 70px;
 	color: white;
 	margin-right: 84%;
 }

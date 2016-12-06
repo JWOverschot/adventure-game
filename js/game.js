@@ -73,10 +73,10 @@ var dynamite = document.getElementById("dynamite");
 var door3Key = false;
 //title screen
 function start() {
-	console.log("Start");
+	console.log("Level 1");
 	document.getElementById("title-screen").style.display = "none";
 	document.getElementById("myAudio").pause(); document.getElementById("myAudio").currentTime = 0;
-	document.getElementById("lvl1").style.display = "inline";
+	document.getElementById("lvls").style.display = "inline";
   bg.style.backgroundImage = "url(media/bg-wall.jpg)";
 	text.innerHTML = l1t1;
 }
@@ -103,7 +103,7 @@ function doorSound() {
 
 function dead() {
   if (text.innerHTML == lAt4 || text.innerHTML == lBt1) {
-    document.getElementById("lvl1").style.display = "none";
+    document.getElementById("lvls").style.display = "none";
     screenOfDeath.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
     console.log("You're dead");
@@ -116,7 +116,7 @@ function dead() {
 
 function win() {
   if (text.innerHTML == lBt1) {
-    document.getElementById("lvl1").style.display = "none";
+    document.getElementById("lvls").style.display = "none";
     winScreen.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
     console.log("You win!");
@@ -158,7 +158,6 @@ function lvl3() {
   desk.style.display = "block";
   vent.style.display = "block";
   computerScreen.style.display = "block";
-  door.style.top = "40%";
   text.innerHTML = l3t1;
   nextBtn.style.visibility = "initial";
   action = 1;
@@ -218,6 +217,8 @@ function door3() {
   if (door3Key == true) {
     lvl3();
     doorSound();
+    doorMat.remove();
+    key.remove();
   }
   else {
     text.innerHTML = "The door is locked!";
@@ -265,20 +266,20 @@ function rotateSafe() {
   }
   //26
 
-  if (degr >= 97 && degr <= 102) {
+  if (degr >= 96 && degr <= 103) {
     if (timeOut != null) {
       clearTimeout(timeOut); 
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = false; console.log("unlock 1st digit");}, 500);
+      timeOut = setTimeout(function(){degrPlusMinus = false; console.log("unlocked 1st digit");}, 500);
     }
   }
   else if (degrPlusMinus == true) {
     clearTimeout(timeOut);
   }
   //50
-  if (degr <= -164 && degr >= -170) {
+  if (degr <= -164 && degr >= -172) {
     if (timeOut != null) {
       clearTimeout(timeOut); 
       timeOut = null;
@@ -290,6 +291,7 @@ function rotateSafe() {
         safe[0].src = "media/safe-inside.png";
         for (var i = 1; i <= 1; i + 2) {
           safe[i].remove();
+          dynamite.style.display = "block";
         }
       }, 500);
     }
@@ -298,6 +300,15 @@ function rotateSafe() {
     clearTimeout(timeOut);
   }
   safeGearFront.style.transform = "rotate(" + degr + "deg)";
+}
+
+function explode() {
+  dynamite.style.filter = "opacity(0)";
+  dynamite.style.transitionDuration = "1s";
+  setTimeout(function() {dynamite.remove()}, 1000);
+  setTimeout(function() {explosion.style.display = "block";}, 1500);
+  setTimeout(function() {safe[0].remove(); bg.style.background = "black";}, 1660);
+  setTimeout(function() {explosion.remove();}, 2000);
 }
 
 action = 1;

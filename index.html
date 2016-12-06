@@ -29,7 +29,7 @@
 		<button id="btnFullscreen" type="button"><i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i></button>
 	</div>
 
-	<div id="lvl1">
+	<div id="lvls">
 		<div onclick="dead()" id="background"></div>
 		<div class="doors">
 		<img onclick="door1()" id="door-1" src="media/door1.png" alt="Door 1">
@@ -42,7 +42,8 @@
 			<img class="safe" id="safe-back" src="media/safe.png" alt="safe">
 			<img class="safe" id="safe-gear-back" src="media/safe-gear-back.png" alt="safe gear back">
 			<img class="safe" onmousewheel="rotateSafe()" id="safe-gear-front" src="media/safe-gear-front.png" alt="safe gear front">
-			<img id="dynamite" src="media/dynamite.png" alt="dynamite">
+			<img onclick="explode()" id="dynamite" src="media/dynamite.png" alt="dynamite">
+			<img id="explosion" src="media/explosion.gif" alt="explosion">
 			<div id="screen"><textarea onkeyup="textCheck()" id="screen-input" type="text" maxlength="100" spellcheck=false></textarea></div>
 			<button onclick="dead()" class="arrows" type="button"><i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i></button>
 			<button onclick="win()" class="arrows" type="button"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></button>

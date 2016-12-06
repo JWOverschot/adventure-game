@@ -30,8 +30,8 @@ document.getElementById("btnFullscreen").addEventListener("click", function() {
 });
 //game
 var nextBtn = document.getElementById("next");
-//text lvl1
 var text = document.getElementById("text");
+//text lvl1
 var l1t1 = "Hello, wat are you doing here?";
 var l1t2 = "Anyways, lets play a game.";
 var l1t3 = "There are two doors the left one is the wrong one and the right one is the right one.";
@@ -49,7 +49,7 @@ var l4t1 = "A safe?";
 var l4t2 = "Do you want to know what is inside?";
 var l4t3 = "fortunatly someone left a postit with a code on it. It says os-9z"
 //text lvl5
-var l5t1 = "use <i class="fa fa-caret-square-o-left" aria-hidden="true"></i><i class="fa fa-caret-square-o-right" aria-hidden="true"></i>"
+var l5t1 = 'use <i id="left-key" class="fa fa-caret-square-o-left" aria-hidden="true"></i> <i id="right-key" class="fa fa-caret-square-o-right" aria-hidden="true"></i> to dodge';
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";

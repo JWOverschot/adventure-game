@@ -255,10 +255,10 @@ var timeOut = null;
 function rotateSafe() {
   
   if (degrPlusMinus == true) {
-    degr += 1;
+    degr += 2;
   }
   else {
-    degr -= 1;
+    degr -= 2;
   }
 
   if (degr == 360 || degr == -360) {

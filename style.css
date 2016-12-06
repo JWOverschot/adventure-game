@@ -224,6 +224,20 @@ main h2 {
 	width: 800px;
 }
 
+.ghost {
+	display: none;
+	position: fixed;
+	opacity: 0.6;
+}
+#ghost1 {
+	right: 50%;
+	width: 0px;
+}
+#ghost2 {
+	left: 50%;
+	width: 0px;
+}
+
 .dialog {
 	width: 100%
 	height: 60px;

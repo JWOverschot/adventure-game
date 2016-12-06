@@ -72,6 +72,9 @@ var arrows = document.getElementsByClassName("arrows");
 var safe = document.getElementsByClassName("safe");
 var safeGearFront = document.getElementById("safe-gear-front");
 var dynamite = document.getElementById("dynamite");
+var ghost = document.getElementsByClassName("ghost");
+var ghost1 = document.getElementById("ghost1");
+var ghost2 = document.getElementById("ghost2");
 var door3Key = false;
 //title screen
 function start() {
@@ -204,6 +207,10 @@ function lvl5() {
   bg.style.backgroundImage = "url(media/tunnel.jpg)";
   bg.style.backgroundRepeat = "no-repeat";
   bg.style.backgroundSize = "cover";
+  for (var i = 0; i <= 1; i++) {
+    ghost[i].style.display = "block";
+  }
+  setTimeout(ghosts(), 4000);
   text.innerHTML = l5t1;
   nextBtn.style.visibility = "initial";
   action = 1;
@@ -332,6 +339,18 @@ function explode() {
   }, 1500);
   setTimeout(function() {safe[0].remove(); bg.style.background = "black";}, 1630);
   setTimeout(function() {explosion.remove(); setTimeout(lvl5(), 2000);}, 2000);
+}
+
+function ghosts() {
+  var a = 0;
+  var intervalGhost = setInterval(function(){
+    a += 1;
+    ghost1.style.width = a + "px";
+    if (a == 3200) {
+      clearInterval(intervalGhost);
+      a = 0;
+    }
+  }, 5);
 }
 
 action = 1;

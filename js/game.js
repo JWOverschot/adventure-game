@@ -272,7 +272,11 @@ function rotateSafe() {
       timeOut = null;
     }
     else {
-      timeOut = setTimeout(function(){degrPlusMinus = false; console.log("unlocked 1st digit");}, 500);
+      timeOut = setTimeout(function(){
+        degrPlusMinus = false; 
+        console.log("unlocked 1st digit");
+        document.getElementById("audioClunk").play();
+      }, 500);
     }
   }
   else if (degrPlusMinus == true) {
@@ -289,10 +293,13 @@ function rotateSafe() {
         degrPlusMinus = true;
         console.log("safe unlocked");
         safe[0].src = "media/safe-inside.png";
-        for (var i = 1; i <= 1; i + 2) {
-          safe[i].remove();
-          dynamite.style.display = "block";
-        }
+        safe[1].remove();
+        safe[1].remove();
+        document.getElementById("audioClunk").play();
+        document.getElementById("audioSafeDoor").play();
+        dynamite.style.display = "block";
+        text.innerHTML = "Dynamite?";
+        nextBtn.style.visibility = "hidden";
       }, 500);
     }
   }
@@ -306,9 +313,13 @@ function explode() {
   dynamite.style.filter = "opacity(0)";
   dynamite.style.transitionDuration = "1s";
   setTimeout(function() {dynamite.remove()}, 1000);
-  setTimeout(function() {explosion.style.display = "block";}, 1500);
-  setTimeout(function() {safe[0].remove(); bg.style.background = "black";}, 1660);
-  setTimeout(function() {explosion.remove();}, 2000);
+  setTimeout(function() {explosion.style.display = "block";
+    text.innerHTML = "BOOM!";
+    document.getElementById("audioExplosion").play();
+    document.getElementById("audioFallingBricks").play();
+  }, 1500);
+  setTimeout(function() {safe[0].remove(); bg.style.background = "black";}, 1630);
+  setTimeout(function() {explosion.remove(); setTimeout(lvl5(), 2000);}, 2000);
 }
 
 action = 1;

@@ -107,7 +107,7 @@ function doorSound() {
 }
 
 function dead() {
-  if (text.innerHTML == lAt4 || text.innerHTML == lBt1) {
+  if (text.innerHTML == lAt4 || text.innerHTML == lBt1 || text.innerHTML == l5t1) {
     document.getElementById("lvls").style.display = "none";
     screenOfDeath.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
@@ -344,7 +344,23 @@ function explode() {
   function ghosts() {
     var a = 0;
     var x = 0;
+    var right = true;
+    var left = true;
+
     function ghostApproach() {
+      document.onkeydown = checkKey;
+      function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '39') {
+          console.log("right");
+          right = false;
+        }
+        else if (e.keyCode == '37') {
+          console.log("left");
+          left = false;
+        }
+      }
+
       var chosenValue = Math.random() < 0.5 ? ghost1 : ghost2;
       var intervalGhost = setInterval(function() {
         a += 1;
@@ -354,10 +370,21 @@ function explode() {
         }
         chosenValue.style.width = a + "px";
       }, 5);
+
+      setTimeout(function() {
+        if (chosenValue == ghost1 && right == true) {
+          console.log("ghost1");
+          dead();
+        }
+        else if (chosenValue == ghost2 && left == true) {
+          console.log("ghost1");
+          dead();
+        }
+      }, 3300);
     }
+
     var intervalGhosts = setInterval(function(){
       ghostApproach();
-      console.log(1);
       x += 1;
       if (x == 10) {
         clearInterval(intervalGhosts);

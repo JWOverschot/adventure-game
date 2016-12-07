@@ -217,6 +217,12 @@ function lvl5() {
   action = 1;
 }
 
+function lvl6() {
+  for (var i = 0; i <= 1; i++) {
+    ghost[i].remove();
+  }
+}
+
 function textCheck() {
   var textarea = document.getElementById("screen-input");
   var textValue = textarea.value.toLowerCase();

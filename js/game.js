@@ -49,7 +49,8 @@ var l4t1 = "A safe?";
 var l4t2 = "Do you want to know what is inside?";
 var l4t3 = "fortunatly someone left a postit with a code on it. It says os-9z"
 //text lvl5
-var l5t1 = 'use <i id="left-key" class="fa fa-caret-square-o-left" aria-hidden="true"></i> <i id="right-key" class="fa fa-caret-square-o-right" aria-hidden="true"></i> to dodge the ghosts';
+var l5t1 = 'Use <i id="left-key" class="fa fa-caret-square-o-left" aria-hidden="true"></i> <i id="right-key" class="fa fa-caret-square-o-right" aria-hidden="true"></i> to dodge the ghosts';
+var l5t2 = "You are clear now.";
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
@@ -352,11 +353,9 @@ function explode() {
       function checkKey(e) {
         e = e || window.event;
         if (e.keyCode == '39') {
-          console.log("right");
           right = false;
         }
         else if (e.keyCode == '37') {
-          console.log("left");
           left = false;
         }
       }
@@ -388,6 +387,7 @@ function explode() {
       x += 1;
       if (x == 10) {
         clearInterval(intervalGhosts);
+        setTimeout(function(){text.innerHTML = l5t2;}, 3300);
       }
     }, 3300);
   }

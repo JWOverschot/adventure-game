@@ -354,9 +354,11 @@ function explode() {
         e = e || window.event;
         if (e.keyCode == '39') {
           right = false;
+          left = true;
         }
         else if (e.keyCode == '37') {
           left = false;
+          right = true;
         }
       }
 

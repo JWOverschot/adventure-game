@@ -49,7 +49,7 @@ var l4t1 = "A safe?";
 var l4t2 = "Do you want to know what is inside?";
 var l4t3 = "fortunatly someone left a postit with a code on it. It says os-9z"
 //text lvl5
-var l5t1 = 'use <i id="left-key" class="fa fa-caret-square-o-left" aria-hidden="true"></i> <i id="right-key" class="fa fa-caret-square-o-right" aria-hidden="true"></i> to dodge';
+var l5t1 = 'use <i id="left-key" class="fa fa-caret-square-o-left" aria-hidden="true"></i> <i id="right-key" class="fa fa-caret-square-o-right" aria-hidden="true"></i> to dodge the ghosts';
 //text lvlA
 var lAt1 = "A nice cliff, what a great choice you've made!";
 var lAt2 = "I'm so nice that I have locked the door for you.";
@@ -212,7 +212,7 @@ function lvl5() {
   }
   setTimeout(ghosts(), 4000);
   text.innerHTML = l5t1;
-  nextBtn.style.visibility = "initial";
+  nextBtn.style.visibility = "hidden";
   action = 1;
 }
 

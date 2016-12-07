@@ -341,17 +341,29 @@ function explode() {
   setTimeout(function() {explosion.remove(); setTimeout(lvl5(), 2000);}, 2000);
 }
 
-function ghosts() {
-  var a = 0;
-  var intervalGhost = setInterval(function(){
-    a += 1;
-    if (a == 3200) {
-      clearInterval(intervalGhost);
-      a = 0;
+  function ghosts() {
+    var a = 0;
+    var x = 0;
+    function ghostApproach() {
+      var chosenValue = Math.random() < 0.5 ? ghost1 : ghost2;
+      var intervalGhost = setInterval(function() {
+        a += 1;
+        if (a == 650) {
+          clearInterval(intervalGhost);
+          a = 0;
+        }
+        chosenValue.style.width = a + "px";
+      }, 5);
     }
-    ghost1.style.width = a + "px";
-  }, 5);
-}
+    var intervalGhosts = setInterval(function(){
+      ghostApproach();
+      console.log(1);
+      x += 1;
+      if (x == 10) {
+        clearInterval(intervalGhosts);
+      }
+    }, 3300);
+  }
 
 action = 1;
 function Next() {

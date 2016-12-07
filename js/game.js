@@ -345,11 +345,11 @@ function ghosts() {
   var a = 0;
   var intervalGhost = setInterval(function(){
     a += 1;
-    ghost1.style.width = a + "px";
     if (a == 3200) {
       clearInterval(intervalGhost);
       a = 0;
     }
+    ghost1.style.width = a + "px";
   }, 5);
 }
 

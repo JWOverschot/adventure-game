@@ -121,7 +121,7 @@ function dead() {
 }
 
 function win() {
-  if (text.innerHTML == lBt1) {
+  if (text.innerHTML == l5t2) {
     document.getElementById("lvls").style.display = "none";
     winScreen.style.display = "block";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#0000aa";
